@@ -6,7 +6,7 @@ times = []
 download = []
 upload = []
 
-with open('test.csv', 'r') as csvfile:
+with open('monitor.csv', 'r') as csvfile:
     plots = csv.reader(csvfile, delimiter=',')
     next(csvfile)
     for row in plots:
@@ -16,7 +16,7 @@ with open('test.csv', 'r') as csvfile:
 
 print(times, "\n", download, "\n", upload)
 
-plt.figure(30, 30)
+plt.figure(figsize=(4, 4))
 plt.plot(times, download, label="download", color="r")
 plt.plot(times, upload, label="upload", color="b")
 plt.xlabel('time')
