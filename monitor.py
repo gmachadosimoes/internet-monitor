@@ -4,8 +4,9 @@ import time
 import csv
 
 s = speedtest.Speedtest()
+speedcsv = open('monitor.csv', 'w')
 
-with open('monitor.csv', mode='w') as speedcsv:
+with speedcsv:
     csv_writer = csv.DictWriter(speedcsv, fieldnames=['time', 'downspeed', 'upspeed'])
     csv_writer.writeheader()
     while True:
